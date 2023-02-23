@@ -1,0 +1,300 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    Layout = "_LayoutSendiri";
+}
+
+<div class="container" id="formEdit">
+    <h1>Informasi Debitur</h1>
+    <form id="formEdit">
+        <div class="row">
+            <div class="col-6">
+                <label for="kodeNamaPanggilan" class="col-form-label">Kode Nama Panggilan:</label>
+                <input type="text" class="form-control" id="kodeNamaPanggilan" name="kodeNamaPanggilan">
+
+                <label for="namaDepan" class="col-form-label">Nama Depan:</label>
+                <input type="text" class="form-control" id="namaDepan" name="namaDepan">
+
+                <label for="namaBelakang" class="col-form-label">Nama Belakang:</label>
+                <input type="text" class="form-control" id="namaBelakang" name="namaBelakang">
+
+                <label for="alamatKTP" class="col-form-label">Alamat KTP:</label>
+                <input type="text" class="form-control" id="alamatKTP" name="alamatKTP">
+
+                <label for="rt" class="col-form-label">RT:</label>
+                <input type="text" class="form-control" id="rt" name="rt">
+
+                <label for="rw" class="col-form-label">RW:</label>
+                <input type="text" class="form-control" id="rw" name="rw">
+
+                <label for="kelurahan" class="col-form-label">Kelurahan:</label>
+                <input type="text" class="form-control" id="kelurahan" name="kelurahan">
+
+                <label for="kecamatan" class="col-form-label">Kecamatan:</label>
+                <input type="text" class="form-control" id="kecamatan" name="kecamatan">
+
+                <label for="kodePos" class="col-form-label">Kode Pos:</label>
+                <input type="text" class="form-control" id="kodePos" name="kodePos">
+
+                <label for="kodeLokasi" class="col-form-label">Kode Lokasi:</label>
+                <input type="text" class="form-control" id="kodeLokasi" name="kodeLokasi">
+
+                <label for="kodeGroup" class="col-form-label">Kode Group:</label>
+                <input type="text" class="form-control" id="kodeGroup" name="kodeGroup">
+
+                <label for="noidentitasKTP" class="col-form-label">No identitas/KTP:</label>
+                <input type="text" class="form-control" id="noidentitasKTP" name="noidentitasKTP">
+
+                <label for="alamat" class="col-form-label">Alamat tinggal saat ini:</label>
+                <input type="text" class="form-control" id="alamat" name="alamat">
+
+                <label for="kodeposrumah" class="col-form-label">Kode pos rumah:</label>
+                <input type="text" class="form-control" id="kodeposrumah" name="kodeposrumah">
+
+                <label for="noHP" class="col-form-label">No HP:</label>
+                <input type="text" class="form-control" id="noHP" name="noHP">
+
+                <label for="npwp" class="col-form-label">NPWP:</label>
+                <input type="text" class="form-control" id="npwp" name="npwp">
+
+                <label for="namaIbuKandung" class="col-form-label">Nama Ibu Kandung:</label>
+                <input type="text" class="form-control" id="namaIbuKandung" name="namaIbuKan">
+
+                <label for="kodeAgama" class="col-form-label">Kode Agama:</label>
+                <select id="kodeAgama" name="kodeAgama" class="form-select">
+                    <option value="99" selected>Pilih Agama</option>
+                    <option value="0">Islam</option>
+                    <option value="1">Katholik</option>
+                    <option value="2">Kristen Protestan</option>
+                    <option value="3">Budha</option>
+                    <option value="4">Hindhu</option>
+                </select>
+
+                <label for="tanggalLahir" class="col-form-label">Tanggal Lahir:</label>
+                <input type="text" class="form-control" id="tanggalLahir" name="tanggalLahir">
+            </div>
+
+            <div class="col-6">
+                <label for="tempatLahir" class="col-form-label">Tempat Lahir:</label>
+                <input type="text" class="form-control" id="tempatLahir" name="tempatLahir">
+
+                <label for="statusPerkawinan" class="col-form-label">Status Perkawinan:</label>
+                <input type="text" class="form-control" id="statusPerkawinan" name="statusPerkawinan">
+
+                <label for="namaDepanPasangan" class="col-form-label">Nama Depan Pasangan:</label>
+                <input type="text" class="form-control" id="namaDepanPasangan" name="namaDepanPasangan">
+
+                <label for="namaBelakangPasangan" class="col-form-label">Nama Belakang Pasangan:</label>
+                <input type="text" class="form-control" id="namaBelakangPasangan" name="namaBelakangPasangan">
+
+                <label for="noIdentitasPasangan" class="col-form-label">No Identitas/KTP Pasangan:</label>
+                <input type="text" class="form-control" id="noIdentitasPasangan" name="noIdentitasPasangan">
+
+                <label for="tanggalLahirPasangan" class="col-form-label">Tanggal Lahir Pasangan:</label>
+                <input type="date" class="form-control" id="tanggalLahirPasangan" name="tanggalLahirPasangan">
+
+                <label for="jenisKelamin" class="col-form-label">Jenis Kelamin:</label>
+                <select id="jenisKelamin" name="jenisKelamin" class="form-select">
+                    <option value="99" selected>Pilih Jenis Kelamin</option>
+                    <option value="0">Laki - laki</option>
+                    <option value="1">Perempuan</option>
+                </select>
+
+                <label for="pekerjaan" class="col-form-label">Pekerjaan:</label>
+                <input type="text" class="form-control" id="pekerjaan" name="pekerjaan">
+
+                <label for="namaPerusahaan" class="col-form-label">Nama Perusahaan:</label>
+                <input type="text" class="form-control" id="namaPerusahaan" name="namaPerusahaan">
+
+                <label for="alamatPerusahaan" class="col-form-label">Alamat Perusahaan:</label>
+                <input type="text" class="form-control" id="alamatPerusahaan" name="alamatPerusahaan">
+
+                <label for="npwpPerusahaan" class="col-form-label">NPWP Perusahaan:</label>
+                <input type="text" class="form-control" id="npwpPerusahaan" name="npwpPerusahaan">
+
+                <label for="tanggalPendirianPerusahaan" class="col-form-label">Tanggal Pendirian Perusahaan:</label>
+                <input type="date" class="form-control" id="tanggalPendirianPerusahaan" name="tanggalPendirianPerusahaan">
+
+                <label for="tanggalLahirPemegangSaham" class="col-form-label">Tanggal Lahir Pemegang Saham:</label>
+                <input type="date" class="form-control" id="tanggalLahirPemegangSaham" name="tanggalLahirPemegangSaham">
+
+                <label for="teleponKantor" class="col-form-label">Telepon Kantor:</label>
+                <input type="text" class="form-control" id="teleponKantor" name="teleponKantor">
+
+                <label for="pendapatanPerbulan" class="col-form-label">Pendapatan Perbulan:</label>
+                <input type="text" class="form-control" id="pendapatanPerbulan" name="pendapatanPerbulan">
+
+                <label for="tujuanPenggunaan" class="col-form-label">Tujuan Penggunaan:</label>
+                <input type="text" class="form-control" id="tujuanPenggunaan" name="tujuanPenggunaan">
+
+                <label for="jumlahKredit" class="col-form-label">Jumlah Kredit:</label>
+                <input type="text" class="form-control" id="jumlahKredit" name="jumlahKredit">
+
+                <label for="tenor" class="col-form-label">Tenor:</label>
+                <input type="text" class="form-control" id="tenor" name="tenor">
+
+                <label for="nppSales" class="col-form-label">NPP Sales:</label>
+                <input type="text" class="form-control" id="nppSales" name="nppSales">
+            </div>
+            <div class="modal-footer">
+                <a asp-controller="Pelanggan" asp-action="index">
+                    <button type="button" class="btn btn-secondary">Kembali</button>
+                </a>
+                <button type="submit" class="btn btn-primary" >Simpan</button>
+                <button type="button" id="btnSubmit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+@section scripts{
+    <script>
+        $.ajax({
+            url: "https://localhost:7131/api/Pelanggans/" + @ViewBag.Id,
+            type: "GET"
+        }).done((result) => {
+            //console.log(ViewBag.Id);
+
+            $("#kodeNamaPanggilan").val(result.data.kodeNamaPanggilan),
+                $("#namaDepan").val(result.data.namaDepan),
+                $("#namaBelakang").val(result.data.namaBelakang),
+                $("#alamatKTP").val(result.data.alamatKTP),
+                $("#rt").val(result.data.rt),
+                $("#rw").val(result.data.rw),
+                $("#kelurahan").val(result.data.kelurahan),
+                $("#kecamatan").val(result.data.kecamatan),
+                $("#kodePos").val(result.data.kodePos),
+                $("#kodeLokasi").val(result.data.kodeLokasi),
+                $("#kodeGroup").val(result.data.kodeGroup),
+                $("#noidentitasKTP").val(result.data.noidentitasKTP),
+                $("#noidentitasKTP").attr("disabled", true);
+            $("#alamat").val(result.data.alamat),
+                $("#kodeposrumah").val(result.data.kodeposrumah),
+                $("#noHP").val(result.data.noHP),
+                $("#npwp").val(result.data.npwp),
+                $("#namaIbuKandung").val(result.data.namaIbuKandung),
+                $("#kodeAgama").val(result.data.kodeAgama),
+                $("#tanggalLahir").val(result.data.tanggalLahir),
+                $("#tempatLahir").val(result.data.tempatLahir),
+                $("#statusPerkawinan").val(result.data.statusPerkawinan),
+                $("#namaDepanPasangan").val(result.data.namaDepanPasangan),
+                $("#namaBelakangPasangan").val(result.data.namaBelakangPasangan),
+                $("#noIdentitasPasangan").val(result.data.noIdentitasPasangan),
+
+                tanggalLahirPasangan = (result.data.tanggalLahirPasangan).substring(0,10)
+            $("#tanggalLahirPasangan").val(tanggalLahirPasangan),
+                
+                $("#jenisKelamin").val(result.data.jenisKelamin),
+                $("#pekerjaan").val(result.data.pekerjaan),
+                $("#namaPerusahaan").val(result.data.namaPerusahaan),
+                $("#alamatPerusahaan").val(result.data.alamatPerusahaan),
+                $("#npwpPerusahaan").val(result.data.npwpPerusahaan),
+
+                tanggalPendirianPerusahaan = (result.data.tanggalPendirianPerusahaan).substring(0, 10)
+                $("#tanggalPendirianPerusahaan").val(tanggalPendirianPerusahaan),
+
+                tanggalLahirPemegangSaham = (result.data.tanggalLahirPemegangSaham).substring(0, 10)
+                $("#tanggalLahirPemegangSaham").val(tanggalLahirPemegangSaham),
+
+                $("#teleponKantor").val(result.data.teleponKantor),
+                $("#pendapatanPerbulan").val(result.data.pendapatanPerbulan),
+                $("#tujuanPenggunaan").val(result.data.tujuanPenggunaan),
+                $("#jumlahKredit").val(result.data.jumlahKredit),
+                $("#tenor").val(result.data.tenor),
+                $("#nppSales").val(result.data.nppSales)
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Attach change event to postal code input
+            $('#kodePos').on('change', function () {
+                // Get postal code value
+                var postalCode = $(this).val();
+
+                // Make AJAX call to API
+                $.ajax({
+                    url: 'https://kodepos.vercel.app/search/?q=' + postalCode,
+                    type: 'GET',
+                    dataType: 'json'
+                }).done((result)=>{
+                    console.log(result);
+                    $("#kelurahan").val(result.data[0].urban),
+                        $("#kecamatan").val(result.data[0].subdistrict)
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('#formEdit').submit(function(event){
+                event.preventDefault();
+                var formData = $(this).serialize();
+
+                let updateEmployee = {
+
+                    kodeNamaPanggilan: $("#kodeNamaPanggilan").val(),
+                    namaDepan: $("#namaDepan").val(),
+                    namaBelakang: $("#namaBelakang").val(),
+                    alamatKTP: $("#alamatKTP").val(),
+                    rt: $("#rt").val(),
+                    rw: $("#rw").val(),
+                    kelurahan: $("#kelurahan").val(),
+                    kecamatan: $("#kecamatan").val(),
+                    kodePos: $("#kodePos").val(),
+                    kodeLokasi: $("#kodeLokasi").val(),
+                    kodeGroup: $("#kodeGroup").val(),
+                    noidentitasKTP: $("#noidentitasKTP").val(),
+                    alamat: $("#alamat").val(),
+                    kodeposrumah: $("#kodeposrumah").val(),
+                    noHP: $("#noHP").val(),
+                    npwp: $("#npwp").val(),
+                    namaIbuKandung: $("#namaIbuKandung").val(),
+                    kodeAgama: parseInt($("#kodeAgama").val()),
+                    tanggalLahir: $("#tanggalLahir").val(),
+                    tempatLahir: $("#tempatLahir").val(),
+                    statusPerkawinan: $("#statusPerkawinan").val(),
+                    namaDepanPasangan: $("#namaDepanPasangan").val(),
+                    namaBelakangPasangan: $("#namaBelakangPasangan").val(),
+                    noIdentitasPasangan: $("#noIdentitasPasangan").val(),
+
+                    tanggalLahirPasangan: $("#tanggalLahirPasangan").val(),
+
+                    jenisKelamin: parseInt($("#jenisKelamin").val()),
+                    pekerjaan: $("#pekerjaan").val(),
+                    namaPerusahaan: $("#namaPerusahaan").val(),
+                    alamatPerusahaan: $("#alamatPerusahaan").val(),
+                    npwpPerusahaan: $("#npwpPerusahaan").val(),
+
+                    tanggalPendirianPerusahaan: $("#tanggalPendirianPerusahaan").val(),
+                    tanggalLahirPemegangSaham: $("#tanggalLahirPemegangSaham").val(),
+
+                    teleponKantor: $("#teleponKantor").val(),
+                    pendapatanPerbulan: $("#pendapatanPerbulan").val(),
+                    tujuanPenggunaan: $("#tujuanPenggunaan").val(),
+                    jumlahKredit: $("#jumlahKredit").val(),
+                    tenor: $("#tenor").val(),
+                    nppSales: $("#nppSales").val()
+
+                }
+                console.log(updateEmployee);
+
+                $.ajax({
+                    url: `https://localhost:7131/api/Pelanggans`,
+                    type: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(updateEmployee),
+                }).done((result)=>{
+                    console.log("Update Berhasil")
+                    alert("EDIT DATA BERHASIL");
+                    //window.location.href = result
+                    //table.ajax.reload()
+                }).fail((error)=>{
+                    console.log("Update gagal")
+                    //location.reload()
+                })
+            })
+        })
+    </script>
+}

@@ -1,0 +1,213 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutSendiri";
+}
+
+<h1> INI LAMAN DATA CUSTOMER</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary mb-2">List Kostumer</h6>
+        <a href="Pelanggan/Insert"><button type="button" class="btn btn-primary" title="Insert Employee">Insert Data Kostumer</button></a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive tablediv">
+            <table id="table_cust" class="table table-hover table-bordered" width="100%" cellspacing="0">
+                <thead class="thead-light font-weight-bold text-primary">
+                    <tr class="">
+                        <td>No</td>
+                        <td>KTP</td>
+                        <td>Nama Lengkap</td>
+                        <td>Nama Panggilan</td>
+                        <td>Alamat KTP</td>
+                        <td>RT</td>
+                        <td>RW</td>
+                        <td>Kelurahan</td>
+                        <td>Kecamatan</td>
+                        <td>Kode Pos</td>
+                        <td>Kode Lokasi</td>
+                        <td>Kode Group</td>
+                        <td>Alamat</td>
+                        <td>Kode Pos Rumah</td>
+                        <td>No. HP</td>
+                        <td>NPWP</td>
+                        <td>Nama Ibu Kandung</td>
+                        <td>Agama</td>
+                        <td>Tanggal Lahir</td>
+                        <td>Tempat Lahir</td>
+                        <td>Status Perkawinan</td>
+                        <td>Nama Lengkap Pasangan</td>
+                        <td>KTP Pasangan</td>
+                        <td>Tanggal Lahir Pasangan</td>
+                        <td>Jenis Kelamin</td>
+                        <td>Pekerjaan</td>
+                        <td>Nama Perusahaan</td>
+                        <td>Alamat Perusahaan</td>
+                        <td>NPWP Perusahaan</td>
+                        <td>Tanggal Pendirian Perusahaan</td>
+                        <td>Tanggal Lahir Pemegang Saham</td>
+                        <td>Telepon Kantor</td>
+                        <td>Pendapatan Perbulan</td>
+                        <td>Tujuan Penggunaan</td>
+                        <td>Jumlah Kredit</td>
+                        <td>Tenor</td>
+                        <td>NPP Sales</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modalEdit" id="modalEdit" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Informasi Debitur</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formSplk">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="kodeNamaPanggilan" class="col-form-label">Kode Nama Panggilan:</label>
+                            <input type="text" class="form-control" id="kodeNamaPanggilan" name="kodeNamaPanggilan">
+
+                            <label for="namaDepan" class="col-form-label">Nama Depan:</label>
+                            <input type="text" class="form-control" id="namaDepan" name="namaDepan">
+
+                            <label for="namaBelakang" class="col-form-label">Nama Belakang:</label>
+                            <input type="text" class="form-control" id="namaBelakang" name="namaBelakang">
+
+                            <label for="alamatKTP" class="col-form-label">Alamat KTP:</label>
+                            <input type="text" class="form-control" id="alamatKTP" name="alamatKTP">
+
+                            <label for="rt" class="col-form-label">RT:</label>
+                            <input type="text" class="form-control" id="rt" name="rt">
+
+                            <label for="rw" class="col-form-label">RW:</label>
+                            <input type="text" class="form-control" id="rw" name="rw">
+
+                            <label for="kelurahan" class="col-form-label">Kelurahan:</label>
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan">
+
+                            <label for="kecamatan" class="col-form-label">Kecamatan:</label>
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan">
+
+                            <label for="kodePos" class="col-form-label">Kode Pos:</label>
+                            <input type="text" class="form-control" id="kodePos" name="kodePos">
+
+                            <label for="kodeLokasi" class="col-form-label">Kode Lokasi:</label>
+                            <input type="text" class="form-control" id="kodeLokasi" name="kodeLokasi">
+
+                            <label for="kodeGroup" class="col-form-label">Kode Group:</label>
+                            <input type="text" class="form-control" id="kodeGroup" name="kodeGroup">
+
+                            <label for="noidentitasKTP" class="col-form-label">No identitas/KTP:</label>
+                            <input type="text" class="form-control" id="noidentitasKTP" name="noidentitasKTP">
+
+                            <label for="alamat" class="col-form-label">Alamat tinggal saat ini:</label>
+                            <input type="text" class="form-control" id="alamat" name="alamat">
+
+                            <label for="kodeposRumah" class="col-form-label">Kode pos rumah:</label>
+                            <input type="text" class="form-control" id="kodeposRumah" name="kodeposRumah">
+
+                            <label for="noHP" class="col-form-label">No HP:</label>
+                            <input type="text" class="form-control" id="noHP" name="noHP">
+
+                            <label for="npwp" class="col-form-label">NPWP:</label>
+                            <input type="text" class="form-control" id="npwp" name="npwp">
+
+                            <label for="namaIbuKandung" class="col-form-label">Nama Ibu Kandung:</label>
+                            <input type="text" class="form-control" id="namaIbuKandung" name="namaIbuKan">
+
+                            <label for="kodeAgama" class="col-form-label">Kode Agama:</label>
+                            <select id="kodeAgama" name="kodeAgama" class="form-control">
+                                <option value="99" selected>Pilih Agama</option>
+                                <option value="0">Islam</option>
+                                <option value="1">Katholik</option>
+                                <option value="2">Kristen Protestan</option>
+                                <option value="3">Budha</option>
+                                <option value="4">Hindhu</option>
+                            </select>
+
+                            <label for="tanggalLahir" class="col-form-label">Tanggal Lahir:</label>
+                            <input type="Date" class="form-control" id="tanggalLahir" name="tanggalLahir">
+                        </div>
+
+                        <div class="col-6">
+                            <label for="tempatLahir" class="col-form-label">Tempat Lahir:</label>
+                            <input type="text" class="form-control" id="tempatLahir" name="tempatLahir">
+
+                            <label for="statusPerkawinan" class="col-form-label">Status Perkawinan:</label>
+                            <input type="text" class="form-control" id="statusPerkawinan" name="statusPerkawinan">
+
+                            <label for="namaDepanPasangan" class="col-form-label">Nama Depan Pasangan:</label>
+                            <input type="text" class="form-control" id="namaDepanPasangan" name="namaDepanPasangan">
+
+                            <label for="namaBelakangPasangan" class="col-form-label">Nama Belakang Pasangan:</label>
+                            <input type="text" class="form-control" id="namaBelakangPasangan" name="namaBelakangPasangan">
+
+                            <label for="noIdentitasPasangan" class="col-form-label">No Identitas/KTP Pasangan:</label>
+                            <input type="text" class="form-control" id="noIdentitasPasangan" name="noIdentitasPasangan">
+
+                            <label for="tanggalLahirPasangan" class="col-form-label">Tanggal Lahir Pasangan:</label>
+                            <input type="text" class="form-control" id="tanggalLahirPasangan" name="tanggalLahirPasangan">
+
+                            <label for="jenisKelamin" class="col-form-label">Jenis Kelamin:</label>
+                            <select id="jenisKelamin" name="jenisKelamin" class="form-control">
+                                <option value="99" selected>Pilih Jenis Kelamin</option>
+                                <option value="0">Laki - laki</option>
+                                <option value="1">Perempuan</option>
+                            </select>
+
+                            <label for="pekerjaan" class="col-form-label">Pekerjaan:</label>
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan">
+
+                            <label for="namaPerusahaan" class="col-form-label">Nama Perusahaan:</label>
+                            <input type="text" class="form-control" id="namaPerusahaan" name="namaPerusahaan">
+
+                            <label for="alamatPerusahaan" class="col-form-label">Alamat Perusahaan:</label>
+                            <input type="text" class="form-control" id="alamatPerusahaan" name="alamatPerusahaan">
+
+                            <label for="npwpPerusahaan" class="col-form-label">NPWP Perusahaan:</label>
+                            <input type="text" class="form-control" id="npwpPerusahaan" name="npwpPerusahaan">
+
+                            <label for="tanggalPendirianPerusahaan" class="col-form-label">Tanggal Pendirian Perusahaan:</label>
+                            <input type="Date" class="form-control" id="tanggalPendirianPerusahaan" name="tanggalPendirianPerusahaan">
+
+                            <label for="tanggalLahirPemegangSaham" class="col-form-label">Tanggal Lahir Pemegang Saham:</label>
+                            <input type="Date" class="form-control" id="tanggalLahirPemegangSaham" name="tanggalLahirPemegangSaham">
+
+                            <label for="teleponKantor" class="col-form-label">Telepon Kantor:</label>
+                            <input type="text" class="form-control" id="teleponKantor" name="teleponKantor">
+
+                            <label for="pendapatanPerbulan" class="col-form-label">Pendapatan Perbulan:</label>
+                            <input type="text" class="form-control" id="pendapatanPerbulan" name="pendapatanPerbulan">
+
+                            <label for="tujuanPenggunaan" class="col-form-label">Tujuan Penggunaan:</label>
+                            <input type="text" class="form-control" id="tujuanPenggunaan" name="tujuanPenggunaan">
+
+                            <label for="jumlahKredit" class="col-form-label">Jumlah Kredit:</label>
+                            <input type="text" class="form-control" id="jumlahKredit" name="jumlahKredit">
+
+                            <label for="tenor" class="col-form-label">Tenor:</label>
+                            <input type="text" class="form-control" id="tenor" name="tenor">
+
+                            <label for="nppSales" class="col-form-label">NPP Sales:</label>
+                            <input type="text" class="form-control" id="nppSales" name="nppSales">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Simpan</button>
+                            <button type="submit" id="btnSubmit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
