@@ -239,8 +239,6 @@
 </div>
 
 @section scripts{
-
-
     <script>
         $(document).ready(function () {
             $("#formInsert").submit(function (event) {
@@ -311,7 +309,8 @@
         })
     </script>
 
-    <script>
+    @*SCRIPT UNTUK MENGISI FIELD OTOMATIS KETIKA MELAKUKAN INPUT KODE POS*@
+    @*<script>
         $(document).ready(function () {
             // attach change event to postal code input
             $('#kodepos').on('change', function () {
@@ -336,7 +335,7 @@
                 };
             });
         });
-    </script>
+    </script>*@
 
     @*<script>
         $(document).ready(function () {
