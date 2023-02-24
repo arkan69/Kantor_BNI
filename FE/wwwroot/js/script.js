@@ -243,6 +243,67 @@ let table = $('#table_cust').DataTable({
 //    ]
 //});
 
+$(document).ready(function () {
+    $('#tData').DataTable({
+        ajax: {
+            url: "https://kodepos.vercel.app/search/?q=50187",
+            dataType: "Json",
+            dataSrc: "data" //need notice, kalau misal API kalian
+        },
+        columns: [
+            {
+                "data": "province"
+            },
+            {
+                "data": "city"
+            },
+            {
+                "data": "subdistrict"
+            },
+            {
+                "data": "urban"
+            },
+            {
+                "data": "postalcode"
+            }
+        ]
+    });
+    //var table = $("#tData").DataTable();
+
+    $("#tData tbody").on("click", "tr", function () {
+        //var data = table.row(this).data();
+        //console.log('data', data);
+        ////alert(data[0] + "'s kota is: " + data[3]);
+        //$('#kodePos').val(data[0]);
+        //$('#kelurahan').val(data[1]);
+        //$('#kecamatan').val(data[2]);
+
+        var row = $(this).closest("tr");
+        var cell1 = row.find("td:nth-child(3)").text();
+        var cell2 = row.find("td:nth-child(4)").text();
+        var cell3 = row.find("td:nth-child(5)").text();
+        console.log(cell1 + " " + cell2);
+        $('#kodePos').val(cell3);
+        $('#kelurahan').val(cell2);
+        $('#kecamatan').val(cell1);
+
+        $('#modalModal').modal('hide');
+    });
+
+    //$("#tData tbody").on("click", "tr", function () {
+    //    //var data = table.row(this).data();
+    //    var datas = table.row(this).data();
+    //    console.log('data', datas);
+    //    if (datas.length > 0) {
+    //        console.log(datas.length);
+    //    }
+    //    //alert(data[0] + "'s kota is: " + data[3]);
+    //    $('#kodePos').val(datas);
+    //    $('#kelurahan').val(datas);
+    //    $('#kecamatan').val(datas);
+    //});
+});
+
 const Edit = (key) => {
     //check = true
     $.ajax({
@@ -251,26 +312,26 @@ const Edit = (key) => {
         console.log(ViewBag.Id);
 
         $("#kodeNamaPanggilan").val(result.data.kodeNamaPanggilan),
-        $("#namaDepan").val(result.data.namaDepan),
-        $("#namaBelakang").val(result.data.namaBelakang),
+            $("#namaDepan").val(result.data.namaDepan),
+            $("#namaBelakang").val(result.data.namaBelakang),
             $("#alamatKTP").val(result.data.alamatKTP),
-        $("#rt").val(result.data.rt),
-        $("#rw").val(result.data.rw),
-        $("#kelurahan").val(result.data.kelurahan),
-        $("#kecamatan").val(result.data.kecamatan),
-        $("#kodePos").val(result.data.kodePos),
-        $("#kodeLokasi").val(result.data.kodeLokasi),
-        $("#kodeGroup").val(result.data.kodeGroup),
-        $("#noidentitasKTP").val(result.data.noidentitasKTP),
+            $("#rt").val(result.data.rt),
+            $("#rw").val(result.data.rw),
+            $("#kelurahan").val(result.data.kelurahan),
+            $("#kecamatan").val(result.data.kecamatan),
+            $("#kodePos").val(result.data.kodePos),
+            $("#kodeLokasi").val(result.data.kodeLokasi),
+            $("#kodeGroup").val(result.data.kodeGroup),
+            $("#noidentitasKTP").val(result.data.noidentitasKTP),
             $("#noidentitasKTP").attr("disabled", true);
         $("#alamat").val(result.data.alamat),
-        $("#kodeposrumah").val(result.data.kodeposrumah),
-        $("#noHP").val(result.data.noHP),
-        $("#npwp").val(result.data.npwp),
-        $("#namaIbuKandung").val(result.data.namaIbuKandung),
-        $("#kodeAgama").val(result.data.kodeAgama),
-        $("#tanggalLahir").val(result.data.tanggalLahir),
-        $("#tempatLahir").val(result.data.tempatLahir),
+            $("#kodeposrumah").val(result.data.kodeposrumah),
+            $("#noHP").val(result.data.noHP),
+            $("#npwp").val(result.data.npwp),
+            $("#namaIbuKandung").val(result.data.namaIbuKandung),
+            $("#kodeAgama").val(result.data.kodeAgama),
+            $("#tanggalLahir").val(result.data.tanggalLahir),
+            $("#tempatLahir").val(result.data.tempatLahir),
             $("#statusPerkawinan").val(result.data.statusPerkawinan),
             $("#namaDepanPasangan").val(result.data.namaDepanPasangan),
             $("#namaBelakangPasangan").val(result.data.namaBelakangPasangan),
