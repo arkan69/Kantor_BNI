@@ -215,6 +215,34 @@ let table = $('#table_cust').DataTable({
     ]
 });
 
+//JS UNTUK KODE POS
+//let table1 = $('#tData').DataTable({
+//    dom: '<"top"Blf>rtip',
+
+//    ajax: {
+//        url: "https://kodepos.vercel.app/search/?q=50187",
+//        dataType: "Json",
+//        dataSrc: "data" //need notice, kalau misal API kalian
+//    },
+//    columns: [
+//        {
+//            "data": "province"
+//        },
+//        {
+//            "data": "city"
+//        },
+//        {
+//            "data": "subdistrict"
+//        },
+//        {
+//            "data": "urban"
+//        },
+//        {
+//            "data": "postalcode"
+//        }
+//    ]
+//});
+
 const Edit = (key) => {
     //check = true
     $.ajax({
