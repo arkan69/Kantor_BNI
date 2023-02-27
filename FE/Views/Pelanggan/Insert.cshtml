@@ -39,6 +39,9 @@
             background-color: gray;
             color: white;
         }
+    .my-div{
+        margin:10px;
+    }
 </style>
 
 <div class="container form-group" id="formInsertPel" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
@@ -180,15 +183,14 @@
                 <a asp-controller="Pelanggan" asp-action="index">
                     <button type="button" class="btn btn-secondary">Kembali</button>
                 </a>
-                <button type="button" class="btn btn-primary">Simpan</button>
-                <button type="submit" id="btnSubmit" class="btn btn-success">Submit</button>
+                <button type="submit" id="btnSubmit" class="btn btn-primary">Insert</button>
             </div>
         </div>
     </form>
 </div>
 
 <!--MODAL UNTUK MENAMPILKAN KODE POS-->
-<div class="modal fade" id="modalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="modalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -196,43 +198,49 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="close"></button>
             </div>
             <div class="modal-body">
-                <table id="tData" class="table table-striped table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Provinsi</th>
-                            <th>Kota</th>
-                            <th>Kecamatan</th>
-                            <th>Kelurahan</th>
-                            <th>Kode Pos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        @*<tr>
-                        <td>Jawa Tengah</td>
-                        <td>Semarang</td>
-                        <td>Ngaliyan</td>
-                        <td>Podorejo</td>
-                        <td>50187</td>
-                        </tr>
-                        <tr>
-                        <td>Jawa Tengah</td>
-                        <td>Semarang</td>
-                        <td>Ngaliyan</td>
-                        <td>Bringin</td>
-                        <td>50189</td>
-                        </tr>
-                        <tr>
-                        <td>Jawa Tengah</td>
-                        <td>Semarang</td>
-                        <td>Ngaliyan</td>
-                        <td>Gondoriyo</td>
-                        <td>50187</td>
-                        </tr>*@
-                    </tbody>
-                </table>
+                <div class="my-div">
+                    <label for="kataKunci" class="col-form-label">Masukkan Kata Kunci:</label>
+                    <input type="text" class="form-control col-6" id="kataKunci" name="kataKunci" placeholder="Masukkan kode pos/kelurahan/kecamatan/kota">
+                </div>
+                <div class="container-fluid">
+                    <table id="tData" class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Provinsi</th>
+                                <th>Kota</th>
+                                <th>Kecamatan</th>
+                                <th>Kelurahan</th>
+                                <th>Kode Pos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            @*<tr>
+                            <td>Jawa Tengah</td>
+                            <td>Semarang</td>
+                            <td>Ngaliyan</td>
+                            <td>Podorejo</td>
+                            <td>50187</td>
+                            </tr>
+                            <tr>
+                            <td>Jawa Tengah</td>
+                            <td>Semarang</td>
+                            <td>Ngaliyan</td>
+                            <td>Bringin</td>
+                            <td>50189</td>
+                            </tr>
+                            <tr>
+                            <td>Jawa Tengah</td>
+                            <td>Semarang</td>
+                            <td>Ngaliyan</td>
+                            <td>Gondoriyo</td>
+                            <td>50187</td>
+                            </tr>*@
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
