@@ -243,66 +243,164 @@ let table = $('#table_cust').DataTable({
 //    ]
 //});
 
-$(document).ready(function () {
-    $('#tData').DataTable({
-        ajax: {
-            url: "https://kodepos.vercel.app/search/?q=50187",
-            dataType: "Json",
-            dataSrc: "data" //need notice, kalau misal API kalian
-        },
-        columns: [
-            {
-                "data": "province"
-            },
-            {
-                "data": "city"
-            },
-            {
-                "data": "subdistrict"
-            },
-            {
-                "data": "urban"
-            },
-            {
-                "data": "postalcode"
-            }
-        ]
+
+/*MEMBUAT DATATABE PADA MODAL MENGGUNAKAN API KODE POS 
+ * YANG DITEMBAK LANGSUNG KE KDOE POS YANG ADA*/
+//$(document).ready(function () {
+//    console.log('Document ready');
+//    //let modal1 = $('#modalModal');
+//    $('#tData').DataTable({
+//        ajax: {
+//            url: "https://kodepos.vercel.app/search/?q=50187",
+//            dataType: "Json",
+//            dataSrc: "data" //need notice, kalau misal API kalian
+//        },
+//        columns: [
+//            {
+//                "data": "province"
+//            },
+//            {
+//                "data": "city"
+//            },
+//            {
+//                "data": "subdistrict"
+//            },
+//            {
+//                "data": "urban"
+//            },
+//            {
+//                "data": "postalcode"
+//            }
+//        ]
+//    });
+//    //var table = $("#tData").DataTable();
+
+//    $("#tData tbody").on("click", "tr", function () {
+
+//        console.log("Row Clicked");
+//        var row = $(this).closest("tr");
+//        var cell1 = row.find("td:nth-child(3)").text();
+//        var cell2 = row.find("td:nth-child(4)").text();
+//        var cell3 = row.find("td:nth-child(5)").text();
+//        console.log(cell1 + " " + cell2);
+//        $('#kodePos').val(cell3);
+//        $('#kelurahan').val(cell2);
+//        $('#kecamatan').val(cell1);
+//        //modal.ajax.close();
+
+//    });
+//        $('#modalModal').modal('hide');
+//});
+
+
+/*MEMBUAT DATA PADA API KODE POS MUNCUL KE DATATABLE
+ * MENGGUNAKAN INPUT KOTA/KEC/KEL/KODE POS */
+const open = () => {
+    $(document).ready(function () {
+        console.log('Document ready');
+        //let modal1 = $('#modalModal');
+        $('#modalModal').modal('show');
+        $('#kataKunci').on('change', function () {
+            var kataKunci = $(this).val();
+        /*let table=*/ $('#tData').DataTable({
+                ajax: {
+                    url: "https://kodepos.vercel.app/search/?q=" + kataKunci,
+                    dataType: "Json",
+                    dataSrc: "data" //need notice, kalau misal API kalian
+                },
+                columns: [
+                    {
+                        "data": "province"
+                    },
+                    {
+                        "data": "city"
+                    },
+                    {
+                        "data": "subdistrict"
+                    },
+                    {
+                        "data": "urban"
+                    },
+                    {
+                        "data": "postalcode"
+                    }
+                ]
+            });
+            //var table = $("#tData").DataTable();
+
+            $("#tData tbody").on("click", "tr", function () {
+
+                console.log("Row Clicked");
+                var row = $(this).closest("tr");
+                var cell1 = row.find("td:nth-child(3)").text();
+                var cell2 = row.find("td:nth-child(4)").text();
+                var cell3 = row.find("td:nth-child(5)").text();
+                console.log(cell1 + " " + cell2);
+                $('#kodePos').val(cell3);
+                $('#kelurahan').val(cell2);
+                $('#kecamatan').val(cell1);
+                //AjaxComplete();
+                $('#modalModal').modal('hide');
+                $('.modal-backdrop').hide();
+            });
+        });
     });
-    //var table = $("#tData").DataTable();
+}
 
-    $("#tData tbody").on("click", "tr", function () {
-        //var data = table.row(this).data();
-        //console.log('data', data);
-        ////alert(data[0] + "'s kota is: " + data[3]);
-        //$('#kodePos').val(data[0]);
-        //$('#kelurahan').val(data[1]);
-        //$('#kecamatan').val(data[2]);
 
-        var row = $(this).closest("tr");
-        var cell1 = row.find("td:nth-child(3)").text();
-        var cell2 = row.find("td:nth-child(4)").text();
-        var cell3 = row.find("td:nth-child(5)").text();
-        console.log(cell1 + " " + cell2);
-        $('#kodePos').val(cell3);
-        $('#kelurahan').val(cell2);
-        $('#kecamatan').val(cell1);
 
-        $('#modalModal').modal('hide');
-    });
+//$(document).ready(function () {
+//    console.log('Document ready');
+//    //let modal1 = $('#modalModal');
+//    $('#kataKunci').on('change', function () {
+//        var kataKunci = $(this).val();
+//        /*let table=*/ $('#tData').DataTable({
+//            ajax: {
+//                url: "https://kodepos.vercel.app/search/?q=" + kataKunci,
+//                dataType: "Json",
+//                dataSrc: "data" //need notice, kalau misal API kalian
+//            },
+//            columns: [
+//                {
+//                    "data": "province"
+//                },
+//                {
+//                    "data": "city"
+//                },
+//                {
+//                    "data": "subdistrict"
+//                },
+//                {
+//                    "data": "urban"
+//                },
+//                {
+//                    "data": "postalcode"
+//                }
+//            ]
+//        });
+//        //var table = $("#tData").DataTable();
 
-    //$("#tData tbody").on("click", "tr", function () {
-    //    //var data = table.row(this).data();
-    //    var datas = table.row(this).data();
-    //    console.log('data', datas);
-    //    if (datas.length > 0) {
-    //        console.log(datas.length);
-    //    }
-    //    //alert(data[0] + "'s kota is: " + data[3]);
-    //    $('#kodePos').val(datas);
-    //    $('#kelurahan').val(datas);
-    //    $('#kecamatan').val(datas);
-    //});
-});
+//        $("#tData tbody").on("click", "tr", function () {
+
+//            console.log("Row Clicked");
+//            var row = $(this).closest("tr");
+//            var cell1 = row.find("td:nth-child(3)").text();
+//            var cell2 = row.find("td:nth-child(4)").text();
+//            var cell3 = row.find("td:nth-child(5)").text();
+//            console.log(cell1 + " " + cell2);
+//            $('#kodePos').val(cell3);
+//            $('#kelurahan').val(cell2);
+//            $('#kecamatan').val(cell1);
+//            //AjaxComplete();
+//            $('#modalModal.close').click();
+//            $('.modal-backdrop').remove();
+//        });
+//    });
+//});
+
+function AjaxComplete() {
+    $('#modalModal').modal('hide');
+};
 
 const Edit = (key) => {
     //check = true
