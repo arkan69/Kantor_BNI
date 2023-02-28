@@ -11,6 +11,9 @@ namespace API.Contexts
         }
 
         public DbSet<Pelanggan> Pelanggans { get; set; }
+        public DbSet<SektorEkonomi> SektorEkonomis { get; set; }
+        public DbSet<SubSE> SubSEs { get; set; }
+        public DbSet<SubSubSE> SubSubSEs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
