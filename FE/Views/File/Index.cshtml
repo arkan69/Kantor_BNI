@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Layout = "_LayoutSendiri";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6>Upload File Excel</h6>
+        <p>Silahkan upload file excel anda yang berisi data diri anda yaitu, No.KTP, Nama Depan,Nama Belakang, NPWP. </p>
+    </div>
+    <div class="card-body">
+        <div class="mb-1">
+            <label for="recipient-name" class="col-form-label">File Data Diri (Excel File):</label>
+            <input type="file" class="" id="excel" name="excel">
+        </div>
+        <div style="text-align:center">
+            <button type="button" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <img src="~/css/kucing.jpg" alt="Image" width="500" height="300" />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <label for="recipient-name" class="col-form-label">File Data Diri (Excel File):</label>
+                                <input type="file" class="form-control" id="excel" name="excel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-body">
+        <div class="table-responsive tablediv">
+            <table id="custom" class="table table-hover table-bordered" width="100%" cellspacing="0">
+                <thead class="thead-light font-weight-bold">
+                    <tr class="">
+                        <td>No</td>
+                        <td>KTP</td>
+                        <td>Nama Lengkap</td>
+                        <td>No. HP</td>
+                        <td>NPWP</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+</script>
