@@ -2,6 +2,38 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+let tabel = $('#custom').DataTable({
+
+    ajax: {
+        url: "https://localhost:7131/api/Pelanggans",
+        dataType: "Json",
+        dataSrc: "" //need notice, kalau misal API kalian 
+    },
+    columns: [
+        {
+            data: "id",
+            render: function (data, type, row, meta) {
+                return meta.row + meta.settings._iDisplayStart + 1;
+            }
+        },
+        {
+            data: "noidentitasKTP"
+        },
+        {
+            data: ["namaDepan", "namaBelakang"],
+            render: (data, type, row, meta) => {
+                return row.namaDepan + " " + row.namaBelakang;
+            }
+        },
+        {
+            data: "noHP"
+        },
+        {
+            data: "npwp"
+        }
+    ]
+});
+
 let table = $('#table_cust').DataTable({
     dom: '<"top"Blf>rtip',
     buttons: [
@@ -295,7 +327,7 @@ let table = $('#table_cust').DataTable({
 
 /*MEMBUAT DATA PADA API KODE POS MUNCUL KE DATATABLE
  * MENGGUNAKAN INPUT KOTA/KEC/KEL/KODE POS */
-const open = () => {
+const Open = () => {
     $(document).ready(function () {
         console.log('Document ready');
         //let modal1 = $('#modalModal');
@@ -347,7 +379,11 @@ const open = () => {
     });
 }
 
-
+function handleClick(constValue) {
+    Open();
+    //console.log(constValue);
+    // Output: "Hello, world!"
+}
 
 //$(document).ready(function () {
 //    console.log('Document ready');
