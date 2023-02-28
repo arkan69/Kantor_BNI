@@ -11,6 +11,9 @@ builder.Services.AddControllers();
 
 //Deepndencies Injection
 builder.Services.AddScoped<PelangganRepositories>();
+builder.Services.AddScoped<SektorEkonomRepositories>();
+builder.Services.AddScoped<SubSERepositories>();
+builder.Services.AddScoped<SubSubSERepositories>();
 
 // COnfigure SQL Server Databases
 builder.Services.AddDbContext<MyContext>(options => options
